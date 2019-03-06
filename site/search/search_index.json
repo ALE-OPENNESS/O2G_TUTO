@@ -1,0 +1,179 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome \n\n\n\n\n\n\n\n\n\n\nAbout this tutorial\n\n\nHi ! I'm here to help you use the O2G API with Postman.\nIf you follow this tutorial step by step, you will be able to rock the world !\n\n\n\n\nPre-requisites\n\n\n\n\nURL O2G\n\n\nPassword and Login\n\n\nPhone number\n\n\nPostman\n\n\n\n\n\n\nv2.4.1 \nLast update 04.12.2018",
+            "title": "Home"
+        },
+        {
+            "location": "/#welcome",
+            "text": "",
+            "title": " Welcome "
+        },
+        {
+            "location": "/#about-this-tutorial",
+            "text": "Hi ! I'm here to help you use the O2G API with Postman.\nIf you follow this tutorial step by step, you will be able to rock the world !",
+            "title": "About this tutorial"
+        },
+        {
+            "location": "/#pre-requisites",
+            "text": "URL O2G  Password and Login  Phone number  Postman    v2.4.1  Last update 04.12.2018",
+            "title": "Pre-requisites"
+        },
+        {
+            "location": "/Get_Postman/",
+            "text": "Download Postman\n\n\n\n\nOpen a web browser, like Google Chrome or Firefoxe\n\n\nIn the URL bar, type \nhttps://www.getpostman.com\n and push \n\"ENTER\"\n\n\n\n\n\n\n\n\nClick on \"Download the App\"\n\n\n\n\n\n\n\n\nSelect your platform (in this exemple it's Windows) and click on \"Download\"\n\n\n\n\n\n\nInstallation\n\n\n\n\nWhen the download is done, click on \"Open\"\n\n\n\n\n\n\nthen \"Execute\" and finish your setup as you want.",
+            "title": "Get Postman"
+        },
+        {
+            "location": "/Get_Postman/#download-postman",
+            "text": "Open a web browser, like Google Chrome or Firefoxe  In the URL bar, type  https://www.getpostman.com  and push  \"ENTER\"     Click on \"Download the App\"     Select your platform (in this exemple it's Windows) and click on \"Download\"",
+            "title": "Download Postman"
+        },
+        {
+            "location": "/Get_Postman/#installation",
+            "text": "When the download is done, click on \"Open\"    then \"Execute\" and finish your setup as you want.",
+            "title": "Installation"
+        },
+        {
+            "location": "/preliminary/",
+            "text": "URL\n\n\nDuring all this tutorial i will use this URL : \nhttps://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/\n it may be different from yours but you can replace it with your own !\n\n\n\n\nSettings\n\n\nThe SSL certificate is not yet valid, you need to allow Postman to use URL without SSL.\n\n\n\n\nFirst, click on the \n\"Spanner\"\n icon, then on \n\"Settings\"\n\n\n\n\n\n\n\n\nThen click on \"SSL certificate verication\" to be in the \n\"OFF\"\n position.\n\n\n\n\n\n\nNow that we have \"Postman\", here are the first essential queries to use the O2G API.",
+            "title": "Preliminary"
+        },
+        {
+            "location": "/preliminary/#url",
+            "text": "During all this tutorial i will use this URL :  https://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/  it may be different from yours but you can replace it with your own !",
+            "title": "URL"
+        },
+        {
+            "location": "/preliminary/#settings",
+            "text": "The SSL certificate is not yet valid, you need to allow Postman to use URL without SSL.   First, click on the  \"Spanner\"  icon, then on  \"Settings\"     Then click on \"SSL certificate verication\" to be in the  \"OFF\"  position.    Now that we have \"Postman\", here are the first essential queries to use the O2G API.",
+            "title": "Settings"
+        },
+        {
+            "location": "/Basics/",
+            "text": "To log in the API, you \nhave to authenticate\n yourself, and then \ncreate a session\n with your user name.\n\n\n\n\nAuthentification\n\n\n\n\nFirst, enter this URL : \nhttps://o2g-shared-sandbox.ale-aapp.com/api/rest/authenticate?version=1.0\n in the field provided for this effect with the \nGET\n request.\n\n\n\n\n\n\n\n\n\n\nThen go to the \n\"Authorization\"\n tab then choose the type \n\"Basic Auth\"\n and enter your login in \n\"Username\"\n and password in \n\"Password\"\n in the fields below.\n\n\n\n\n\n\n\n\n\n\nIf you have the \n\"Status: 200 OK\"\n, the query succeded.\n\n\nNow, you have your \nCookie\n which will serve you to authenticate you during the next queries. It is automatically saved in \nthe \"Cookie\" tab\n.\n\n\n\n\n\n\n\n\nYou can manually enter the Alcatel Cookie, but it's really not practical. For your information, to do that by hand you have to fill the \nKEY\n in the Headers by \"Cookie\" with the \nVALUE\n \"AlcUserId=\nyourCookieValue\n\".\n\n\n\n\n\n\nCreate a session\n\n\n\n\nNow that you have the registered authentication cookie, you can open your session by using the \nPOST\n request with the following URL \nhttps://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0//sessions \n, and by adding in the \nHeader\n tab the \n\"Content-Type\"\n key and the \n\u00ab application/json \u00bb\n value.\n\n\n\n\n\n\n\n\n\n\nThen in the \n\"Body\"\n tab, activate the \n\"raw\"\n button then select \n\"JSON\"\n, then copy the body as the example below and replace the \n\"userName\"\n with your own application name.\n\n\n\n\n\n\n\n\nIf you have the \n\"Status: 200 OK\"\n, the query succeded.",
+            "title": "Getting Started"
+        },
+        {
+            "location": "/Basics/#authentification",
+            "text": "First, enter this URL :  https://o2g-shared-sandbox.ale-aapp.com/api/rest/authenticate?version=1.0  in the field provided for this effect with the  GET  request.      Then go to the  \"Authorization\"  tab then choose the type  \"Basic Auth\"  and enter your login in  \"Username\"  and password in  \"Password\"  in the fields below.      If you have the  \"Status: 200 OK\" , the query succeded.  Now, you have your  Cookie  which will serve you to authenticate you during the next queries. It is automatically saved in  the \"Cookie\" tab .     You can manually enter the Alcatel Cookie, but it's really not practical. For your information, to do that by hand you have to fill the  KEY  in the Headers by \"Cookie\" with the  VALUE  \"AlcUserId= yourCookieValue \".",
+            "title": "Authentification"
+        },
+        {
+            "location": "/Basics/#create-a-session",
+            "text": "Now that you have the registered authentication cookie, you can open your session by using the  POST  request with the following URL  https://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0//sessions  , and by adding in the  Header  tab the  \"Content-Type\"  key and the  \u00ab application/json \u00bb  value.      Then in the  \"Body\"  tab, activate the  \"raw\"  button then select  \"JSON\" , then copy the body as the example below and replace the  \"userName\"  with your own application name.     If you have the  \"Status: 200 OK\" , the query succeded.",
+            "title": "Create a session"
+        },
+        {
+            "location": "/first_make_call/",
+            "text": "See all users\n\n\n\n\nBegging with a \nGET\n request with this URL :\n \nhttps://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/logins\n\n\n\n\n\n\n\n\nIf you have \n\"Status: 200 OK\"\n, the query succeded.\n\n\n\n\nIf you are an admin, you will be able to see all the users you administate. In this case, I can only see my username because I'm not log in as administator account.\n\n\n\n\nInformations of one user\n\n\nIn this exemple, we want the informations of user named \"oxe18002\"\n\n\n\n\nMake a \nGET\n request with https://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/users/\n18002\n\n\n\n\n\n\n\n\nIf you have \n\"Status: 200 OK\"\n, the query succeded.\n\n\n\n\nWith this query, you will be able to find a phone number for exemple, it's very useful.\n\n\n\n\nMake a Call\n\n\nFor the example, we are the user with the number 19140, and we will call the number 19141.\n\n\n\n\nLet's start by taking a \nPOST\n method with the URL \nhttps://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/telephony/basicCall\n and fill in the Header with the key \"Content-Type\" which has for value \"application/json\".\n\n\n\n\n\n\n\n\nIn the \nBody\n, we will fill it in this way, again with the \nraw\n format and \nJSON\n enabled.\n\n\n\n\n\n\n\n\nIf you have the \n\"Status: 201 Created\"\n, the query succeded.\n\n\n\n\n\n\nGood job ! You're now able to hack the NASA !",
+            "title": "First Make Call"
+        },
+        {
+            "location": "/first_make_call/#see-all-users",
+            "text": "Begging with a  GET  request with this URL :   https://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/logins     If you have  \"Status: 200 OK\" , the query succeded.   If you are an admin, you will be able to see all the users you administate. In this case, I can only see my username because I'm not log in as administator account.",
+            "title": "See all users"
+        },
+        {
+            "location": "/first_make_call/#informations-of-one-user",
+            "text": "In this exemple, we want the informations of user named \"oxe18002\"   Make a  GET  request with https://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/users/ 18002     If you have  \"Status: 200 OK\" , the query succeded.   With this query, you will be able to find a phone number for exemple, it's very useful.",
+            "title": "Informations of one user"
+        },
+        {
+            "location": "/first_make_call/#make-a-call",
+            "text": "For the example, we are the user with the number 19140, and we will call the number 19141.   Let's start by taking a  POST  method with the URL  https://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/telephony/basicCall  and fill in the Header with the key \"Content-Type\" which has for value \"application/json\".     In the  Body , we will fill it in this way, again with the  raw  format and  JSON  enabled.     If you have the  \"Status: 201 Created\" , the query succeded.    Good job ! You're now able to hack the NASA !",
+            "title": "Make a Call"
+        },
+        {
+            "location": "/query/",
+            "text": "Subscription for event notification\n\n\nFor this exemple, I want to subscribe to events to user oxe18013\n\n\n\n\nMake a \nPOST\n request with this URL \n \nhttps://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/subscriptions/\n\n\n\n\n\n\n\n\nFill the body as below in \"raw\", \"JSON\"\n\n\n\n\n\n\n{\n    \"filter\": \n    {\n        \"selectors\":\n       [ \n        {\"ids\": [ \"oxe18013\" ],\"names\": [ \"telephony\" ]},\n        {\"ids\": [ \"oxe18013\" ],\"names\": [ \"eventSummary\" ]}\n       ]\n    },\n\"version\":\"1.0\"\n}\n\n\n\n\n\nIf you have \n\"Status: 200 OK\"\n, the query succeded.\n\n\n\n\n\n\nChange a Password\n\n\nYou have to connect with an \nAdmin account\n to do this request !\n\n\nLet's take for exemple a user called \noxe18001\n who have \"1234\" as password, and we want to change it to \"toto\".\n\n\n\n\nDo a \nPUT\n request with \n \nhttps://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/users/\noxe18001\n/password\n as URL.\n\n\n\n\n\n\n\n\nComplete the body as below :\n\n\n\n\n\n\n\n\n    {\n        \"oldPassword\":\"1234\"\n        \"newPassword\":\"toto\"\n    }\n\n\n\n\n\nIf you have the \n\"Status: 204 No Content\"\n, the request worked !\n\n\n\n\n\n\nLog out\n\n\nTo disconnect your account you have to \nDELETE\n your session.\n\n\n\n\nSo, make a \nDELETE\n requery with \nhttps://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/sessions\n as URL.\n\n\n\n\n\n\n\n\nIf you have the \n\"Status: 204 No Content\"\n, the query succeded !",
+            "title": "Useful Query"
+        },
+        {
+            "location": "/query/#subscription-for-event-notification",
+            "text": "For this exemple, I want to subscribe to events to user oxe18013   Make a  POST  request with this URL    https://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/subscriptions/     Fill the body as below in \"raw\", \"JSON\"",
+            "title": "Subscription for event notification"
+        },
+        {
+            "location": "/query/#change-a-password",
+            "text": "You have to connect with an  Admin account  to do this request !  Let's take for exemple a user called  oxe18001  who have \"1234\" as password, and we want to change it to \"toto\".   Do a  PUT  request with    https://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/users/ oxe18001 /password  as URL.     Complete the body as below :",
+            "title": "Change a Password"
+        },
+        {
+            "location": "/query/#log-out",
+            "text": "To disconnect your account you have to  DELETE  your session.   So, make a  DELETE  requery with  https://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/sessions  as URL.     If you have the  \"Status: 204 No Content\" , the query succeded !",
+            "title": "Log out"
+        },
+        {
+            "location": "/wadl/",
+            "text": "Download WADL\n\n\nIf you want to have all the URL query in a Collection in postman, you need to download the wadl file from the O2G API.\n\n\n\n\nFirst, open a browser and enter this URL \nhttps://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/application.wadl\n\n\n\n\n\n\n\n\nThen you need to save the file. You can make \nCtrl + s\n or a right click in the middle of the page and then \nSave as\n\n\n\n\n\n\nand then \nSave\n\n\n\n\nImport WADL\n\n\n\n\nNow, you can open Postman and make \nCtrl + o\n, click on \n\"Choose file\"\n\n\n\n\n\n\nselect \napplication.wald\n and click \nOpen\n.\n\n\n\n\n\n\nNow you have all the URL for query in the \"\nCollections\n\" tab.",
+            "title": "All URL Collection"
+        },
+        {
+            "location": "/wadl/#download-wadl",
+            "text": "If you want to have all the URL query in a Collection in postman, you need to download the wadl file from the O2G API.   First, open a browser and enter this URL  https://o2g-shared-sandbox.ale-aapp.com/api/rest/1.0/application.wadl     Then you need to save the file. You can make  Ctrl + s  or a right click in the middle of the page and then  Save as    and then  Save",
+            "title": "Download WADL"
+        },
+        {
+            "location": "/wadl/#import-wadl",
+            "text": "Now, you can open Postman and make  Ctrl + o , click on  \"Choose file\"    select  application.wald  and click  Open .    Now you have all the URL for query in the \" Collections \" tab.",
+            "title": "Import WADL"
+        },
+        {
+            "location": "/advenced_query/",
+            "text": "Find your PBX nodeId\n\n\n\n\nFirst you need to \nGET\n the nodeId of your PBX with this URL :\nhttps://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/\n\n\n\n\n\n\n\n\nIf the request worked you have a \n\"Status: 200 OK\"\n and this type of body with your \nnodeIds\n :\n\n\n\n\n\n\n\n\nCheck for a free number\n\n\n\n\nTo check all the number used, you can do a \nGET\n on \nhttps://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/407/instances/Subscriber\n \nand find if a phone number is used or not.\n\n\n\n\n\n\n\n\nCreate a new user\n\n\nYou need an Admin account for this query.\n\n\n\n\nNow you can complete this URL :\nhttps://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/\n407\n/instances/Subscriber\n with your own \nnodeIds\n do a \nPOST\n query and fill the in JSON body as below :\n\n\n\n\n\n\n{\n    \"attributes\": [\n    {\n        \"name\": \"Directory_Number\",\n        \"value\": [\"19999\"]\n    },\n    {\n        \"name\": \"Annu_Name\",\n        \"value\": [\"Darmon\"]\n    },\n    {\n        \"name\": \"Annu_First_Name\",\n        \"value\": [\"Gerard\"]\n    },\n    {\n        \"name\": \"Cost_Center_Name\",\n        \"value\": [\"administrator1\"]\n    },\n    {\n        \"name\": \"ClickAndPh\",\n        \"value\": [\"A4980_Pro\"]\n    },\n    {\n        \"name\": \"Station_Type\",\n        \"value\": [\"SIP_Extension\"]\n    }\n    ]\n}\n\n\n\n\n\nIf you have the \n\"Status: 201 Created\"\n, the query succeded.\n\n\n\n\n\n\nGet all information about user\n\n\nWhen you create a user, all the value that you don't set, will be set by default. If you do this query, you will be able to see \nall the settings that you can do on a single user\n.\nIn this case, i want to see all informations about user 19997.\n\n\n\n\nYou juste have to do a \nGET\n with this URL \nhttps://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/407/instances/Subscriber/\n19997\n\n\n\n\n\n\n\n\nAnd you will have informations like this\n\n\n\n\n\n\n\n\nIf you have the \n\"Status: 200 OK\"\n, the query succeded.\n\n\n\n\n\n\nEdit a user\n\n\nIf you want to change one (or more) parameter on an existant user, you have to do that :\nIn this example, I want to change the name and the first name of the user 19996.\n\n\n\n\nDo a \nPUT\n with URL \nhttps://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/407/instances/Subscriber/\n19996\n and fill the body like this in RAW JSON\n\n\n\n\n\n\n{\n    \"attributes\": [\n    {\n        \"name\": \"Annu_Name\",\n        \"value\": [\"Pitiot\"]\n    },\n    {\n        \"name\": \"Annu_First_Name\",\n        \"value\": [\"Franck\"]\n    }\n    ]\n}\n\n\n\n\n\nIf you have the \n\"Status: 204 NO Content\"\n, the query succeded.\n\n\n\n\n\n\nDelete a user\n\n\nI want to delete user 19996\n\n\n\n\nJuste do a \nDELETE\n with URL \nhttps://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/407/instances/Subscriber/\n19996\n\n\n\n\n\n\n\n\nIf you have the \n\"Status: 204 No Content\"\n, the query succeded.",
+            "title": "C.R.U.D User"
+        },
+        {
+            "location": "/advenced_query/#find-your-pbx-nodeid",
+            "text": "First you need to  GET  the nodeId of your PBX with this URL : https://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/     If the request worked you have a  \"Status: 200 OK\"  and this type of body with your  nodeIds  :",
+            "title": "Find your PBX nodeId"
+        },
+        {
+            "location": "/advenced_query/#check-for-a-free-number",
+            "text": "To check all the number used, you can do a  GET  on  https://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/407/instances/Subscriber   and find if a phone number is used or not.",
+            "title": "Check for a free number"
+        },
+        {
+            "location": "/advenced_query/#create-a-new-user",
+            "text": "You need an Admin account for this query.   Now you can complete this URL : https://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/ 407 /instances/Subscriber  with your own  nodeIds  do a  POST  query and fill the in JSON body as below :",
+            "title": "Create a new user"
+        },
+        {
+            "location": "/advenced_query/#get-all-information-about-user",
+            "text": "When you create a user, all the value that you don't set, will be set by default. If you do this query, you will be able to see  all the settings that you can do on a single user .\nIn this case, i want to see all informations about user 19997.   You juste have to do a  GET  with this URL  https://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/407/instances/Subscriber/ 19997     And you will have informations like this     If you have the  \"Status: 200 OK\" , the query succeded.",
+            "title": "Get all information about user"
+        },
+        {
+            "location": "/advenced_query/#edit-a-user",
+            "text": "If you want to change one (or more) parameter on an existant user, you have to do that :\nIn this example, I want to change the name and the first name of the user 19996.   Do a  PUT  with URL  https://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/407/instances/Subscriber/ 19996  and fill the body like this in RAW JSON",
+            "title": "Edit a user"
+        },
+        {
+            "location": "/advenced_query/#delete-a-user",
+            "text": "I want to delete user 19996   Juste do a  DELETE  with URL  https://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/407/instances/Subscriber/ 19996     If you have the  \"Status: 204 No Content\" , the query succeded.",
+            "title": "Delete a user"
+        },
+        {
+            "location": "/events/",
+            "text": "During all this little tutorial on events, I will use an intranet connection. If you need to, use HTTPS instead of HTTP. \n\nIn HTTPS the event port used is 8016 and in HTTP the port used is 8014.\n\n\nSubscription\n\n\nFor this example, I want to subscribe to events to user oxe19141.\n\n\n\n\nFirst, you need to do a \nPOST\n query to this URL :\nhttp://o2g-instance1.ale-aapp.com/api/rest/1.0/subscriptions/\n\n\n\n\n\n\nwith this body :\n\n\n\n\n{\n    \"filter\": \n    {\n       \"selectors\":\n       [ \n            {\"ids\": [ \"oxe19141\" ],\"names\": [ \"telephony\" ]},\n            {\"ids\": [ \"oxe19141\" ],\"names\": [ \"eventSummary\" ]}\n       ]\n    },\n    \"version\":\"1.0\"\n}\n\n\n\n\n\nIf the request worked you have a \n\"Status: 200 OK\"\n and the response body will return us the \nURL to use for a long polling\n and the \"subscriptionId\", mandatory if you want to unsubscribe to someone :\n\n\n\n\n\n\n\n\n{\n    \"subscriptionId\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkM1IiwiaWF0IjoxNTM3NDUwMTg2fQ.jDDsEPtoW3Ae8Fiw5YLWE9MdflEcMz-RoWLweAtPDvS\",\n    \"publicPollingUrl\": \"http://o2g-instance1.ale-aapp.com:8014/OTEvents?subscriptionId=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkM1IiwiaWF0IjoxNTM3NDUwMTg2fQ.jDDsEPtoW3Ae8Fiw5YLWE9MdflEcMz-RoWLweAtPDvS\",\n    \"privatePollingUrl\": \"http://o2g-instance1.ale-aapp.com:8014/OTEvents?subscriptionId=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkM1IiwiaWF0IjoxNTM3NDUwMTg2fQ.jDDsEPtoW3Ae8Fiw5YLWE9MdflEcMz-RoWLweAtPDvS\",\n    \"status\": \"ACCEPTED\",\n    \"mode\": \"CHUNK\",\n    \"format\": \"JSON\"\n}\n\n\n\n\n\nLong Polling\n\n\nIn this example, my device (subscribed) is 19141 and i will have a call from 19140.\n\n\n\n\nNow that you have your \"PollingUrl\", open your favorite browser (in my case chrome) and past your \nURL\n.\n\n\n\n\n\n\n\n\nIf it's all right, you have the \"Chunck started\" status.\n\n\n\n\n\n\n\n\nNow I connect my \ndevice 19141\n who is a softphone. You can see his state is \n\"FREE\"\n\n\n\n\n\n\n\n\nNow the 19140 call the 19141. You can see that the \"state\" change to \n\"RINGING_INCOMING\"\n. You are able to see the \nphone number of the device who call you \n (\"participants\") and \nmore informations \non him.\n\n\n\n\n\n\n\n\nDuring the call, you can see a lot of informations. Your \"state\" change to \n\"BUSY\"\n for example.\n\n\n\n\n\n\n\n\nNow, the 19140 device \nstopped the call\n. The 19141's state change to \n\"FREE\"\n\n\n\n\n\n\n\n\nUnsubscribe\n\n\n\n\nTo unsubscribe someone you just have to do a \nDELETE\n on \nhttp://o2g-instance1.ale-aapp.com/api/rest/1.0/subscriptions/\n + \"subscriptionId\"\n\n\n\n\nfor example : \n http://o2g-instance1.ale-aapp.com/api/rest/1.0/subscriptions/\neyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkM1IiwiaWF0IjoxNTM3NDUwMTg2fQ.jDDsEPtoW3Ae8Fiw5YLWE9MdflEcMz-RoWLweAtPDvS\n\n\n\n\nOn succes you have the \n\"204 No Content\"\n status.",
+            "title": "Events"
+        },
+        {
+            "location": "/events/#subscription",
+            "text": "For this example, I want to subscribe to events to user oxe19141.   First, you need to do a  POST  query to this URL : http://o2g-instance1.ale-aapp.com/api/rest/1.0/subscriptions/    with this body :",
+            "title": "Subscription"
+        },
+        {
+            "location": "/events/#long-polling",
+            "text": "In this example, my device (subscribed) is 19141 and i will have a call from 19140.   Now that you have your \"PollingUrl\", open your favorite browser (in my case chrome) and past your  URL .     If it's all right, you have the \"Chunck started\" status.     Now I connect my  device 19141  who is a softphone. You can see his state is  \"FREE\"     Now the 19140 call the 19141. You can see that the \"state\" change to  \"RINGING_INCOMING\" . You are able to see the  phone number of the device who call you   (\"participants\") and  more informations  on him.     During the call, you can see a lot of informations. Your \"state\" change to  \"BUSY\"  for example.     Now, the 19140 device  stopped the call . The 19141's state change to  \"FREE\"",
+            "title": "Long Polling"
+        },
+        {
+            "location": "/events/#unsubscribe",
+            "text": "To unsubscribe someone you just have to do a  DELETE  on  http://o2g-instance1.ale-aapp.com/api/rest/1.0/subscriptions/  + \"subscriptionId\"   for example :   http://o2g-instance1.ale-aapp.com/api/rest/1.0/subscriptions/ eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkM1IiwiaWF0IjoxNTM3NDUwMTg2fQ.jDDsEPtoW3Ae8Fiw5YLWE9MdflEcMz-RoWLweAtPDvS   On succes you have the  \"204 No Content\"  status.",
+            "title": "Unsubscribe"
+        }
+    ]
+}

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>C.R.U.D User - O2G tutorial - Start with Postman</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "C.R.U.D User";
+    var mkdocs_page_input_path = "advenced_query.md";
+    var mkdocs_page_url = "/advenced_query/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> O2G tutorial - Start with Postman</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Get_Postman/">Get Postman</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../preliminary/">Preliminary</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Basics/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../first_make_call/">First Make Call</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../query/">Useful Query</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../wadl/">All URL Collection</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">C.R.U.D User</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#find-your-pbx-nodeid">Find your PBX nodeId</a></li>
+    
+
+    <li class="toctree-l2"><a href="#check-for-a-free-number">Check for a free number</a></li>
+    
+
+    <li class="toctree-l2"><a href="#create-a-new-user">Create a new user</a></li>
+    
+
+    <li class="toctree-l2"><a href="#get-all-information-about-user">Get all information about user</a></li>
+    
+
+    <li class="toctree-l2"><a href="#edit-a-user">Edit a user</a></li>
+    
+
+    <li class="toctree-l2"><a href="#delete-a-user">Delete a user</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../events/">Events</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">O2G tutorial - Start with Postman</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>C.R.U.D User</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="find-your-pbx-nodeid">Find your PBX nodeId</h2>
+<ul>
+<li>First you need to <span style="color:orange">GET</span> the nodeId of your PBX with this URL :<br/><span style="color:blue">https://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/</span></li>
+</ul>
+<p><img alt="download" src="../pics/get_node.png" /></p>
+<ul>
+<li>If the request worked you have a <span style="color:green">"Status: 200 OK"</span> and this type of body with your <span style="color:blue">nodeIds</span> :</li>
+</ul>
+<p><img alt="download" src="../pics/node_body.png" /></p>
+<hr />
+<h2 id="check-for-a-free-number">Check for a free number</h2>
+<ul>
+<li>To check all the number used, you can do a <span style="color:orange">GET</span> on <br/><span style="color:blue">https://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/407/instances/Subscriber</span> <br />and find if a phone number is used or not.</li>
+</ul>
+<p><img alt="download" src="../pics/body_subscriber.png" /></p>
+<hr />
+<h2 id="create-a-new-user">Create a new user</h2>
+<p>You need an Admin account for this query.</p>
+<ul>
+<li>Now you can complete this URL :<br/><span style="color:blue">https://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/<span style="color:red">407</span>/instances/Subscriber</span><br/> with your own <span style="color:red">nodeIds</span> do a <span style="color:orange">POST</span> query and fill the in JSON body as below :<br/></li>
+</ul>
+<h2 id="_1"></h2>
+<pre><code>{
+    "attributes": [
+    {
+        "name": "Directory_Number",
+        "value": ["19999"]
+    },
+    {
+        "name": "Annu_Name",
+        "value": ["Darmon"]
+    },
+    {
+        "name": "Annu_First_Name",
+        "value": ["Gerard"]
+    },
+    {
+        "name": "Cost_Center_Name",
+        "value": ["administrator1"]
+    },
+    {
+        "name": "ClickAndPh",
+        "value": ["A4980_Pro"]
+    },
+    {
+        "name": "Station_Type",
+        "value": ["SIP_Extension"]
+    }
+    ]
+}
+</code></pre>
+<ul>
+<li>If you have the <span style="color:green">"Status: 201 Created"</span>, the query succeded.</li>
+</ul>
+<hr />
+<h2 id="get-all-information-about-user">Get all information about user</h2>
+<p>When you create a user, all the value that you don't set, will be set by default. If you do this query, you will be able to see <b>all the settings that you can do on a single user</b>.
+In this case, i want to see all informations about user 19997.</p>
+<ul>
+<li>You juste have to do a <span style="color:orange">GET</span> with this URL <span style="color:blue">https://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/407/instances/Subscriber/<span style="color:red">19997</span></span></li>
+</ul>
+<p><img alt="download" src="../pics/getèuser_cartman.png" /></p>
+<ul>
+<li>And you will have informations like this</li>
+</ul>
+<p><img alt="download" src="../pics/getèuser_cartman_body.png" /></p>
+<ul>
+<li>If you have the <span style="color:green">"Status: 200 OK"</span>, the query succeded.</li>
+</ul>
+<hr />
+<h2 id="edit-a-user">Edit a user</h2>
+<p>If you want to change one (or more) parameter on an existant user, you have to do that :
+In this example, I want to change the name and the first name of the user 19996.</p>
+<ul>
+<li>Do a <span style="color:orange">PUT</span> with URL <span style="color:blue">https://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/407/instances/Subscriber/<span style="color:red">19996</span></span> and fill the body like this in RAW JSON</li>
+</ul>
+<h2 id="_2"></h2>
+<pre><code>{
+    "attributes": [
+    {
+        "name": "Annu_Name",
+        "value": ["Pitiot"]
+    },
+    {
+        "name": "Annu_First_Name",
+        "value": ["Franck"]
+    }
+    ]
+}
+</code></pre>
+<ul>
+<li>If you have the <span style="color:green">"Status: 204 NO Content"</span>, the query succeded.</li>
+</ul>
+<hr />
+<h2 id="delete-a-user">Delete a user</h2>
+<p>I want to delete user 19996</p>
+<ul>
+<li>Juste do a <span style="color:orange">DELETE</span> with URL <span style="color:blue">https://o2g-instance1.ale-aapp.com/api/rest/1.0/pbxs/407/instances/Subscriber/<span style="color:red">19996</span></span></li>
+</ul>
+<p><img alt="download" src="../pics/delete_user_19996.png" /></p>
+<ul>
+<li>If you have the <span style="color:green">"Status: 204 No Content"</span>, the query succeded.</li>
+</ul>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../events/" class="btn btn-neutral float-right" title="Events">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../wadl/" class="btn btn-neutral" title="All URL Collection"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../wadl/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../events/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

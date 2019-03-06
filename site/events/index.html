@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Events - O2G tutorial - Start with Postman</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Events";
+    var mkdocs_page_input_path = "events.md";
+    var mkdocs_page_url = "/events/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> O2G tutorial - Start with Postman</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Get_Postman/">Get Postman</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../preliminary/">Preliminary</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Basics/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../first_make_call/">First Make Call</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../query/">Useful Query</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../wadl/">All URL Collection</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../advenced_query/">C.R.U.D User</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Events</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#subscription">Subscription</a></li>
+    
+
+    <li class="toctree-l2"><a href="#long-polling">Long Polling</a></li>
+    
+
+    <li class="toctree-l2"><a href="#unsubscribe">Unsubscribe</a></li>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">O2G tutorial - Start with Postman</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Events</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>During all this little tutorial on events, I will use an intranet connection. If you need to, use HTTPS instead of HTTP. <br/>
+In HTTPS the event port used is 8016 and in HTTP the port used is 8014.</p>
+<h2 id="subscription">Subscription</h2>
+<p>For this example, I want to subscribe to events to user oxe19141.</p>
+<ul>
+<li>First, you need to do a <span style="color:orange">POST</span> query to this URL :<br/><span style="color:blue">http://o2g-instance1.ale-aapp.com/api/rest/1.0/subscriptions/</span></li>
+</ul>
+<p><img alt="download" src="../pics/sub_19141_query.png" /></p>
+<p>with this body :</p>
+<h2 id="_1"></h2>
+<pre><code>{
+    "filter": 
+    {
+       "selectors":
+       [ 
+            {"ids": [ "oxe19141" ],"names": [ "telephony" ]},
+            {"ids": [ "oxe19141" ],"names": [ "eventSummary" ]}
+       ]
+    },
+    "version":"1.0"
+}
+</code></pre>
+<ul>
+<li>If the request worked you have a <span style="color:green">"Status: 200 OK"</span> and the response body will return us the <span style="color:orange">URL to use for a long polling</span> and the "subscriptionId", mandatory if you want to unsubscribe to someone :</li>
+</ul>
+<p><img alt="download" src="../pics/res_query_sub.png" /></p>
+<h2 id="_2"></h2>
+<pre><code>{
+    "subscriptionId": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkM1IiwiaWF0IjoxNTM3NDUwMTg2fQ.jDDsEPtoW3Ae8Fiw5YLWE9MdflEcMz-RoWLweAtPDvS",
+    "publicPollingUrl": "http://o2g-instance1.ale-aapp.com:8014/OTEvents?subscriptionId=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkM1IiwiaWF0IjoxNTM3NDUwMTg2fQ.jDDsEPtoW3Ae8Fiw5YLWE9MdflEcMz-RoWLweAtPDvS",
+    "privatePollingUrl": "http://o2g-instance1.ale-aapp.com:8014/OTEvents?subscriptionId=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkM1IiwiaWF0IjoxNTM3NDUwMTg2fQ.jDDsEPtoW3Ae8Fiw5YLWE9MdflEcMz-RoWLweAtPDvS",
+    "status": "ACCEPTED",
+    "mode": "CHUNK",
+    "format": "JSON"
+}
+</code></pre>
+<hr />
+<h2 id="long-polling">Long Polling</h2>
+<p>In this example, my device (subscribed) is 19141 and i will have a call from 19140.</p>
+<ul>
+<li>Now that you have your "PollingUrl", open your favorite browser (in my case chrome) and past your <span style="color:green">URL</span>.</li>
+</ul>
+<p><img alt="download" src="../pics/url_browser.png" /></p>
+<ul>
+<li>If it's all right, you have the "Chunck started" status.</li>
+</ul>
+<p><img alt="download" src="../pics/connection_to_subscription.png" /></p>
+<ul>
+<li>Now I connect my <span style="color:orange">device 19141</span> who is a softphone. You can see his state is <span style="color:green">"FREE"</span></li>
+</ul>
+<p><img alt="download" src="../pics/connection_device_19141.png" /></p>
+<ul>
+<li>Now the 19140 call the 19141. You can see that the "state" change to <span style="color:green">"RINGING_INCOMING"</span>. You are able to see the <span style="color:red">phone number of the device who call you </span> ("participants") and <span style="color:orange">more informations </span>on him.</li>
+</ul>
+<p><img alt="download" src="../pics/appel_du_device.png" /></p>
+<ul>
+<li>During the call, you can see a lot of informations. Your "state" change to <span style="color:green">"BUSY"</span> for example.</li>
+</ul>
+<p><img alt="download" src="../pics/pendent_le_call.png" /></p>
+<ul>
+<li>Now, the 19140 device <span style="color:blue">stopped the call</span>. The 19141's state change to <span style="color:orange">"FREE"</span></li>
+</ul>
+<p><img alt="download" src="../pics/raccroché.png" /></p>
+<hr />
+<h2 id="unsubscribe">Unsubscribe</h2>
+<ul>
+<li>To unsubscribe someone you just have to do a <span style="color:red">DELETE</span> on <br><code>http://o2g-instance1.ale-aapp.com/api/rest/1.0/subscriptions/</code> + "subscriptionId"</li>
+</ul>
+<p>for example : <br> http://o2g-instance1.ale-aapp.com/api/rest/1.0/subscriptions/<span style="color:red">eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkM1IiwiaWF0IjoxNTM3NDUwMTg2fQ.jDDsEPtoW3Ae8Fiw5YLWE9MdflEcMz-RoWLweAtPDvS</span></p>
+<ul>
+<li>On succes you have the <span style="color:green">"204 No Content"</span> status.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../advenced_query/" class="btn btn-neutral" title="C.R.U.D User"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../advenced_query/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

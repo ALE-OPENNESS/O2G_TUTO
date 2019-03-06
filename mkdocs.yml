@@ -1,0 +1,14 @@
+site_name: O2G tutorial - Start with Postman
+theme:
+  name: 'readthedocs'
+  
+pages:
+- Home: 'index.md'
+- Get Postman: 'Get_Postman.md'
+- Preliminary: 'preliminary.md'
+- Getting Started: 'Basics.md'
+- First Make Call: "first_make_call.md"
+- Useful Query: 'query.md'
+- All URL Collection: "wadl.md"
+- C.R.U.D User: "advenced_query.md"
+- Events: "events.md"
